@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<!-- meta是html语言head区的一个辅助性标签。也许你认为这些代码可有可无。其实如果你能够用好meta标签，会给你带来意想不到的效果，
+		meta标签的作用有：搜索引擎优化（SEO），
+		定义页面使用语言，
+		自动刷新并指向新的页面，
+		实现网页转换时的动态效果，
+		控制页面缓冲，
+		网页定级评价，
+		控制网页显示的窗口等！
+	-->
+	<meta charset="UTF-8"> <!-- for HTML5-->
+	<!-- 通常情况下，您可以自由使用对自己和源文档的读者来说富有意义的名称 
+		author
+		description	    规定页面的描述。搜索引擎会把这个描述显示在搜索结果中
+		keywords		规定一个逗号分隔的关键词列表 - 相关的网页（告诉搜索引擎页面是与什么相关的）
+		generator   	规定用于生成文档的一个软件包
+		revised
+		others
+		robots 			robots用来告诉搜索机器人哪些页面需要索引，哪些页面不需要索引。content的参数有all,none,index,noindex,follow,nofollow。默认是all
+						信息参数为all：文件将被检索，且页面上的链接可以被查询；
+s
+						信息参数为none：文件将不被检索，且页面上的链接不可以被查询；
+
+						信息参数为index：文件将被检索；
+
+						信息参数为follow：页面上的链接可以被查询；
+
+						信息参数为noindex：文件将不被检索，但页面上的链接可以被查询；
+
+						信息参数为nofollow：文件将被检索，但页面上的链接不可以被查询；
+	-->
+	<meta name="author" content="xiaoxiao">
+	<meta name="descriptiion" content="this is a test for css">
+	<!-- http-equiv 属性为名称/值对提供了名称。并指示服务器在发送实际的文档之前先在要传送给浏览器的 MIME 文档头部包含名称/值对
+		content-type
+		expires			可以用于设定网页的到期时间。一旦网页过期，必须到服务器上重新传输。
+		refresh   		刷新页面的时间，自动刷新并指向新页面。
+		set-cookie		设置cookie
+		Pragma          禁止浏览器从本地计算机的缓存中访问页面内容。
+		Window-target   (显示窗口的设定) ，用来防止别人在框架里调用自己的页面，用来防止别人在框架里调用自己的页面，<meta 												http-equiv="Window-target"content="_top"> 
+		Cache-Control   指定请求和响应遵循的缓存机制，
+						Cache-Control指定请求和响应遵循的缓存机制。在请求消息或响应消息中设置Cache-Control并不会修改另一个消息处理过程中的缓存处理过程。请求时的缓存指令包括no-cache、no-store、max-age、max-stale、min-fresh、on
+
+						ly-if-cached，响应消息中的指令包括public、private、no-cache、no-store、no-transform、must-revalidate、proxy-revalidate、max-age。各个消息中的指令含义如下
+
+						Public指示响应可被任何缓存区缓存
+
+						Private指示对于单个用户的整个或部分响应消息，不能被共享缓存处理。这允许服务器仅仅描述当用户的部分响应消息，此响应消息对于其他用户的请求无效
+
+						no-cache指示请求或响应消息不能缓存
+						no-store用于防止重要的信息被无意的发布。在请求消息中发送将使得请求和响应消息都不使用缓存。
+						max-age指示客户机可以接收生存期不大于指定时间（以秒为单位）的响应
+						min-fresh指示客户机可以接收响应时间小于当前时间加上指定时间的响应
+						max-stale指示客户机可以接收超出超时期间的响应消息。如果指定max-stale消息的值，那么客户机可以接收超出超时期指定值之内的响应消息。
+		
+	-->
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Language" content="zh-cn"/> 
+
+	<title>NEURO</title>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<link href="nav.css" rel="stylesheet" type="text/css" />
+	<link href="pic.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+	<nav>
+		<ul class="nav">
+			<li> <a class="active" href="#">NEURO</a> </li>
+			<li> <a href="#" >Pictures</a> </li>
+			<li> <a href="#">Matching</a> </li>
+			<li class="about">	<a href="#"> About</a> </li>
+		</ul>
+	</nav>
+	<content>
+		<div class="left">
+			<div class="col">
+				<div class="col2">
+					<form>
+						<h3>Instructions</h3>
+						<p >
+	Enter a FlyCircuit neuron id to compare against all FlyCircuit neurons, with NBLAST. If the checkbox below is ticked, both forwards and reverse scores will be calculated, normalised and averaged, rather than just using the forwards score. The query neuron will be plotted in black in the 3D viewer to the right, alongside the top 10 hits (rainbow coloured from red = best to pink = worst).</p>
+						<h3>Query:</h3>
+						<div class="upload_p">
+							<div class="upload_div">
+								<a class="uploadButton" href="javascript:void(0);">
+									<input type="file" name="file0" id="file0" class="upfile">
+									<span>upload picture</span>
+								</a>
+							</div>
+							<div class="upload_div" id="upload_file_name" >
+								<input class="upload_file_input" type="text" name="fileName" value="" id="fileName0">
+							</div>
+						</div>
+						<div id="picFiled">
+							<img class="upload_file" src="" id="img0"  >
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="right">
+			<div class="rightCol">
+				<h3> pictures </h3>
+			</div>
+			<div class="picListDiv">
+				<tbody>
+                <tr>
+                    <td rowspan="12" align="right" width="20px"> </td>
+                    <td colspan="3" align="left"><input name="lab_name" type="hidden" value="Con-11/">
+                        <input type="checkbox" name="neuron_name" value="Con-11">
+                        <b>  <a href="./neuron_info.jsp?neuron_name=Con-11" target="_blank">Con-11</a></b>
+                    </td></tr><tr>
+                    <td rowspan="11" align="center">
+                        <img src="/home/uestc-c1501e/neuron_retrieval/templates/timg (5).jpg" height="200" width="250">
+                    </td>
+                    <td align="right" valign="top" nowrap="nowrap">Archive Name:</td>
+                    <td align="left" valign="top">  Lee_LJ</td>
+                </tr><tr><td align="right" valign="top" nowrap="nowrap">Species Name:</td>
+                    <td align="left" valign="top">  rat</td>
+                </tr>
+                <tr>
+                    <td align="right" valign="top" nowrap="nowrap">Structural Domains:</td>
+                    <td align="left" valign="top">  Dendrites, Soma, No Axon</td>
+                </tr>
+                <tr>
+                    <td align="right" valign="top" nowrap="nowrap">Physical Integrity:</td>
+                    <td align="left" valign="top">  Dendrites Incomplete</td>
+                </tr>
+                <tr>
+                    <td align="right" valign="top" nowrap="nowrap">Morphological Attributes:</td>
+                    <td align="left" valign="top">  Diameter, 3D, Angles</td>
+                </tr>
+                <tr>
+                    <td align="right" valign="top" nowrap="nowrap">Region1:</td>
+                    <td align="left" valign="top">  neocortex</td>
+                </tr>
+                <tr>
+                    <td align="right" valign="top" nowrap="nowrap">Region2:</td>
+                    <td align="left" valign="top">  medial prefrontal</td>
+                </tr>
+                <tr>
+                    <td align="right" valign="top" nowrap="nowrap">Region3:</td>
+                    <td align="left" valign="top">  layer 2-3</td></tr>
+                <tr>
+                    <td align="right" valign="top" nowrap="nowrap">Main Cell Type:</td>
+                    <td align="left" valign="top">  principal cell</td>
+                </tr>
+                <tr>
+                    <td align="right" valign="top" nowrap="nowrap">Class2:</td>
+                    <td align="left" valign="top">  pyramidal</td>
+                </tr>
+                <tr>
+                    <td align="right" valign="top" nowrap="nowrap">Class3:</td>
+                    <td align="left" valign="top">  Not reported</td>
+                </tr>
+                <tr>
+                    <td colspan="4"><hr></td>
+                </tr>
+                </tbody>
+			</div>
+		</div>
+	</content>
+
+<script>    
+// function $(Nid){
+// 	return document.getElementById(Nid);
+// }
+
+$("#file0").change(function(){
+	var name = $(this).val(); 
+    var objUrl = getObjectURL(this.files[0]) ;
+    console.log("objUrl = "+objUrl) ;
+    console.log("name = "+name) ;
+    if (objUrl) {
+        $("#img0").attr("src", objUrl) ;
+        $("#fileName0").attr("value", name);
+        $("#picFiled").style.visibility='visible';
+
+    }
+}) ;
+//建立一個可存取到該file的url
+function getObjectURL(file) {
+    var url = null ; 
+    if (window.createObjectURL!=undefined) { // basic
+        url = window.createObjectURL(file) ;
+    } else if (window.URL!=undefined) { // mozilla(firefox)
+        url = window.URL.createObjectURL(file) ;
+    } else if (window.webkitURL!=undefined) { // webkit or chrome
+        url = window.webkitURL.createObjectURL(file) ;
+    }
+    return url ;
+}
+</script>
+</body>
+</html>
+#neuronCount {
+	text-align: center;
+}
+  	ul#navigation {
+		padding: 0;
+		margin: 0;
+		float: center;
+		width: 100%;
+	}
+
+	ul#navigation li {
+		display: inline;
+		float: center;
+
+	}
+
+	ul#navigation li a {
+		text-decoration: none;
+		float: center;
+		margin:0.0 px;
+	}
+	  .fixedcol {
+        position:absolute;
+        width:10em;
+        left:50;
+    }
+
+  #neurons {
+  	font-size : 95%;
+  }
+
+  #neurons td {
+  	padding-left: 1%;
+  }
+
+  #pageNumbers {
+  	padding-left: 0;
+  }
+
+  #pageNumbers > li {
+  	display: inline;
+  	cursor: pointer;
+  }
+
+  .pageActive {
+  	font-weight: bold !important;
+  	font-size: 4 !important;
+  }
+
+  #loader {
+  width: 100%;
+  height: 40px;
+  	background-image: url('../images/loader.gif');
+  	background-repeat: no-repeat;
+  	background-position: center;
+  }

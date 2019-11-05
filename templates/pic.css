@@ -1,0 +1,35 @@
+.rightCol{
+	position: relative;
+    top: 35px;
+    
+}
+
+.listPic {
+	height: 180px;
+	width: 200px;
+}
+
+ul.picUl{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	/*height: 30px;*/
+	line-height: 2.6em;
+    overflow: hidden;
+    border-top-style: solid;
+    border-top-width: 1px;
+}
+
+.picListDiv {
+	position: relative;
+    top: 36px;
+    background-color: white;
+
+}
+
+.picBlock {
+	display: block;
+	margin-right: 20px;
+	margin-bottom: 40px; 
+	padding: 13px;
+}

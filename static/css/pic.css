@@ -1,0 +1,65 @@
+.rightCol{
+	position: relative;
+    top: 35px;
+    
+}
+
+.listPic {
+	height: 180px;
+	width: 200px;
+}
+
+ul.picUl{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	/*height: 30px;*/
+	line-height: 2.6em;
+    overflow: hidden;
+    border-top-style: solid;
+    border-top-width: 1px;
+}
+
+#picListDiv {
+	position: relative;
+    top: 36px;
+    background-color: white;
+
+}
+
+.picBlock {
+	display: block;
+    margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	padding: 5px;
+}
+.nameBlock {
+	/*margin: auto;*/
+  	/*position: absolute;*/
+  	/*top: 0; left: 0; bottom: 0; right: 0;*/
+	/*display: block;*/
+	/*font-size: 28px;*/
+	/*font—weight: 200;*/
+	/*font-family: 'Heiti SC Light', 'Heiti SC';*/
+    text-align:center;
+    display: block;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+}
+
+.name {
+	/*margin: auto;*/
+  	/*position: absolute;*/
+  	/*top: 0; left: 0; bottom: 0; right: 0;*/
+	/*display: block;*/
+	/*font-size: 28px;*/
+	/*font—weight: 200;*/
+	/*font-family: 'Heiti SC Light', 'Heiti SC';*/
+    text-align:center;
+    display: block;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	padding: 5px;
+}

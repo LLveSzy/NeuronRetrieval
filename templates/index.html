@@ -1,0 +1,246 @@
+<html>
+<head>
+
+    <!-- meta是html语言head区的一个辅助性标签。也许你认为这些代码可有可无。其实如果你能够用好meta标签，会给你带来意想不到的效果，
+        meta标签的作用有：搜索引擎优化（SEO），
+        定义页面使用语言，
+        自动刷新并指向新的页面，
+        实现网页转换时的动态效果，
+        控制页面缓冲，
+        网页定级评价，
+        控制网页显示的窗口等！
+    -->
+    <meta charset="UTF-8"> <!-- for HTML5-->
+    <!-- 通常情况下，您可以自由使用对自己和源文档的读者来说富有意义的名称
+        author
+        description	    规定页面的描述。搜索引擎会把这个描述显示在搜索结果中
+        keywords		规定一个逗号分隔的关键词列表 - 相关的网页（告诉搜索引擎页面是与什么相关的）
+        generator   	规定用于生成文档的一个软件包
+        revised
+        others
+        robots 			robots用来告诉搜索机器人哪些页面需要索引，哪些页面不需要索引。content的参数有all,none,index,noindex,follow,nofollow。默认是all
+                        信息参数为all：文件将被检索，且页面上的链接可以被查询；
+s
+                        信息参数为none：文件将不被检索，且页面上的链接不可以被查询；
+
+                        信息参数为index：文件将被检索；
+
+                        信息参数为follow：页面上的链接可以被查询；
+
+                        信息参数为noindex：文件将不被检索，但页面上的链接可以被查询；
+
+                        信息参数为nofollow：文件将被检索，但页面上的链接不可以被查询；
+    -->
+    <meta name="author" content="xiaoxiao">
+    <meta name="descriptiion" content="this is a test for css">
+    <!-- http-equiv 属性为名称/值对提供了名称。并指示服务器在发送实际的文档之前先在要传送给浏览器的 MIME 文档头部包含名称/值对
+        content-type
+        expires			可以用于设定网页的到期时间。一旦网页过期，必须到服务器上重新传输。
+        refresh   		刷新页面的时间，自动刷新并指向新页面。
+        set-cookie		设置cookie
+        Pragma          禁止浏览器从本地计算机的缓存中访问页面内容。
+        Window-target   (显示窗口的设定) ，用来防止别人在框架里调用自己的页面，用来防止别人在框架里调用自己的页面，<meta 												http-equiv="Window-target"content="_top">
+        Cache-Control   指定请求和响应遵循的缓存机制，
+                        Cache-Control指定请求和响应遵循的缓存机制。在请求消息或响应消息中设置Cache-Control并不会修改另一个消息处理过程中的缓存处理过程。请求时的缓存指令包括no-cache、no-store、max-age、max-stale、min-fresh、on
+
+                        ly-if-cached，响应消息中的指令包括public、private、no-cache、no-store、no-transform、must-revalidate、proxy-revalidate、max-age。各个消息中的指令含义如下
+
+                        Public指示响应可被任何缓存区缓存
+
+                        Private指示对于单个用户的整个或部分响应消息，不能被共享缓存处理。这允许服务器仅仅描述当用户的部分响应消息，此响应消息对于其他用户的请求无效
+
+                        no-cache指示请求或响应消息不能缓存
+                        no-store用于防止重要的信息被无意的发布。在请求消息中发送将使得请求和响应消息都不使用缓存。
+                        max-age指示客户机可以接收生存期不大于指定时间（以秒为单位）的响应
+                        min-fresh指示客户机可以接收响应时间小于当前时间加上指定时间的响应
+                        max-stale指示客户机可以接收超出超时期间的响应消息。如果指定max-stale消息的值，那么客户机可以接收超出超时期指定值之内的响应消息。
+
+    -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta http-equiv="Content-Language" content="zh-cn"/>
+
+    <title>NEURONAL RETRIEVAL</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="/static/js/Three.js"></script>
+    <script src="/static/js/THREE.MeshLine.js"></script>
+    <script src="/static/js/OrbitControls.js"></script>
+    <script src="/static/js/TrackballControls.js"></script>
+    <script src="/static/js/visual.js"></script>
+
+    <link href="/static/css/nav.css" rel="stylesheet" type="text/css"/>
+    <link href="/static/css/pic.css" rel="stylesheet" type="text/css"/>
+    <style type="text/css">
+        .lst{
+            top:36px;
+            width: 1100px;
+            height: 1000px;
+            position: relative;
+        }
+        .right{
+            background-color: red;
+        }
+        .lst div{
+            width: 200px;
+            display: inline-block;
+            margin-right: 5px;
+            margin-bottom: 15px;
+        }
+
+        .canvas_label{
+        	margin:0 auto;
+        	font-size:16px;
+        	font-weight: bold;
+        	text-align: center;
+        	padding : 5px;
+        	display:-webkit-box;
+            -webkit-box-orient:vertical;
+        	-webkit-line-clamp:1;
+        	overflow:hidden;
+        }
+    </style>
+</head>
+<body onload="threeStart({{ images_list }},{{neuron_name}})">
+<nav>
+    <ul class="nav">
+        <li><a class="active" href="/home/main">NEURONAL RETRIEVAL</a></li>
+        {#			<li> <a href="#" >Pictures</a> </li>#}
+        {#			<li> <a href="#">Matching</a> </li>#}
+        <li class="about"><a class="about" href="/home/detail"> Deatils</a></li>
+    </ul>
+</nav>
+<content>
+    <div class="left">
+        <div class="col">
+            <div class="col2">
+                    <h3>Instructions</h3>
+                    <p>
+                        This demo is for the large-scale neuronal retrieval. By submitting a query neuron from local,
+                        our system can quickly find it's top-20 most similar neurons in NeuroMorpho datasets including
+                        more than 58,000 neurons.
+                    </p>
+                    <h3>Query Neuron:</h3>
+{#                    <form enctype="multipart/form-data" action="/home/main" method="POST">#}
+                    
+                    <form method="POST" action="/home/main/" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input id="file0" type="file" name="myfile"/>
+                        <br/>
+                        <input type="submit" value="upload" />
+                    
+                    </form> {% csrf_token %}
+                    <div id="picFiled">
+
+                    </div>
+
+<!--                <button onclick="threeStart({{ images_list }},{{neuron_name}})"> show </button>-->
+                    {#                    <form action="/home/main" method="post">#}
+                    {#                    <form enctype="multipart/form-data" action="/home/main/" method="post">#}
+                    {#                        <div class="upload_p">#}
+                    {#                            <div class="upload_div">#}
+                    {#                                <div class="uploadButton" href="javascript:void(0);">#}
+                    {#                                    <input type="file" name="file0"  class="upfile">#}
+                    {#                                    <span>upload picture</span>#}
+                    {#                                </div>#}
+                    {#                            </div>#}
+                    {#                            <div class="upload_div" id="upload_file_name">#}
+                    {#                                <input class="upload_file_input" type="text" name="fileName" value=" " id="fileName0">#}
+                    {#                            </div>#}
+                    {#                            <div class="submit">#}
+                    {#                                <input type="submit" value="Submit" class="upfile">#}
+                    {#                                <span>Submit</span>#}
+                    {#                            </div>#}
+                    {#                        </div>#}
+                    {#                    </form>#}
+
+                    {#                    <div id="picFile">#}
+                    {#                        <img class="upload_file" src="/media/{{ name }}" id="img0">#}
+                    {#                        <a class="name"><h3 style="text-align:center; width: 360px">{{ name }}</h3></a>#}
+                    {#                    </div>#}
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="rightCol">
+            <h3> Retrieved Neurons </h3>
+        </div>
+        <div class="lst" id="picListDiv">
+<!--            <ul class="picUl">-->
+<!--                {% for image in images_list %}-->
+<!--&lt;!&ndash;                    <li class="picBlock"><img class="listPic" src="/media/{{ name }}">&ndash;&gt;-->
+<!--                        <script>-->
+<!--                            console.log({{images_list}})-->
+<!--                        </script>-->
+<!--                        <h5 class="nameBlock">{{ image }}</h5>-->
+<!--                    </li>-->
+<!--                    {#					<li class="picBlock"><img class="listPic" src="/media/ A00c_a3r_morphology"></li>#}-->
+<!--                    {#					<li class="picBlock"><img class="listPic" src="/media/ A00c_a3r_morphology"></li>#}-->
+<!--                    {#					<li class="picBlock"><img class="listPic" src="/media/ A00c_a3r_morphology"></li>#}-->
+<!--                    {#					<li class="picBlock"><img class="listPic" src="/media/ A00c_a3r_morphology"></li>#}-->
+<!--                    {#					<li class="picBlock"><img class="listPic" src="/media/ A00c_a3r_morphology"></li>#}-->
+<!--                    {#                    <li class="picBlock"><img class="listPic" src="/media/ A00c_a3r_morphology"></li>#}-->
+<!--                    {#                    <li class="picBlock"><img class="listPic" src="/media/ A00c_a3r_morphology"></li>#}-->
+<!--                {% endfor %}-->
+
+<!--            </ul>-->
+        </div>
+    </div>
+</content>
+
+<script>
+    // function $(Nid){
+    // 	return document.getElementById(Nid);
+    // }
+    $("#file0").change(function () {
+        var formdata = new FormData();
+        var d = $("#file0")[0].files[0];
+        var csrf_data = $('[name=csrfmiddlewaretoken]').val();
+        formdata.append('myfile',d);
+        formdata.append('csrfmiddlewaretoken',csrf_data);
+        console.log(d);
+
+        $.ajax({
+            url:'/get_arr/',
+            type:'post',
+            data:formdata,
+            processData: false ,    // 不处理数据
+            contentType: false,    // 不设置内容类型
+            success:function (res) {
+                res = JSON.parse(res)
+                fileLoad(res)
+            }
+        })
+
+        //$.get("/get_arr/",{'myfile': d},function(res){
+           // console.log(res);
+        //});
+        //console.log({{ custom }});
+    })
+
+<!--    $("#file0").change(function () {-->
+<!--        var name = $(this).val();-->
+<!--        var objUrl = getObjectURL(this.files[0]);-->
+<!--        console.log("objUrl = " + objUrl);-->
+<!--        console.log("name = " + name);-->
+<!--        if (objUrl) {-->
+<!--            $("#img0").attr("src", objUrl);-->
+<!--            $("#fileName0").attr("value", name);-->
+<!--            $("#picFiled").style.visibility = 'visible';-->
+
+<!--        }-->
+<!--    });-->
+
+    //建立一個可存取到該file的url
+    function getObjectURL(file) {
+        var url = null;
+        if (window.createObjectURL != undefined) { // basic
+            url = window.createObjectURL(file);
+        } else if (window.URL != undefined) { // mozilla(firefox)
+            url = window.URL.createObjectURL(file);
+        } else if (window.webkitURL != undefined) { // webkit or chrome
+            url = window.webkitURL.createObjectURL(file);
+        }
+        return url;
+    }
+</script>
+</body>
+</html>

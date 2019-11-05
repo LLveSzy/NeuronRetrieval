@@ -1,0 +1,178 @@
+
+body {
+    background-image:url('../images/test.png');
+	font-family: Verdana, Arial, tahoma, helvetica, arial,sans-serif;
+	font-size: 90%;  
+	line-height: 1.5em
+}
+a
+{
+	color:#c17430;
+	
+}
+
+#top-menu2
+{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	z-index: 10;
+}
+
+
+ 
+#top-menu2 li
+{
+	float: left;
+	height: 47px;
+	margin: 0;
+	position: relative;
+	z-index: 20;
+	font-weight:bold;
+}
+
+
+#top-menu2 ul
+{
+	position: absolute;
+	left: -999em;
+	top: 0px;
+	z-index: 30;
+	margin: 0 0 0 -1px;
+	width: auto;
+	height: auto;
+	padding: 10px 5px 20px;
+	list-style: none;
+	float: left;
+	background: url(../images/Menu_DropDown_bg.png) repeat-x;
+}
+
+#top-menu2 ul
+{
+	top: 25px;
+}
+
+#top-menu2 ul li
+{
+	float: none;
+	height: auto;
+	position: relative;
+	z-index: 40;
+	margin: 0;
+	padding: 0;
+	white-space: nowrap;
+	font-family: Verdana, Arial, tahoma, helvetica, arial,sans-serif;
+	text-decoration: none;
+	color: #000000;
+}
+#top-menu2 li a
+{
+	text-decoration: none;
+	color: #000000;
+}
+
+#top-menu2 ul li a,
+#top-menu2 li.active ul li a
+{
+	height: auto;
+	border: 0;
+	color: #000000;
+	padding: 2px;
+	float: none;
+	display: block;
+	font-weight: normal;
+	text-decoration: none;
+	font-size:15px;
+}
+
+#top-menu2 ul li a:hover,
+#top-menu2 li.active ul li a:hover
+{
+	color: #fcffd1;
+	
+}
+
+#top-menu2 li:hover ul, 
+#top-menu2 li.hover ul
+{
+	left: auto;
+}
+
+#top-menu2 li:hover,
+#top-menu2 a:hover
+{
+		background: url(../images/Menu_DropDown_bg.png) repeat-x ;
+}
+
+#top-menu2
+{
+	clear: both;
+	float: left;
+	padding: 0 4px;
+	height: 25px;
+	width: 788px;
+	position: relative;
+}
+
+#top-menu2 li
+{
+	position: relative;	
+	height: 25px;
+}
+
+div.main-div
+  {
+	  height:auto;
+	  width:auto;
+
+  }
+
+#top-menu2 li.selected
+  {
+	background: url(../images/MenubackgroundSelected.png) repeat-x ;
+  }  
+  
+  
+  
+  table.tableMatrix {
+    border-style: solid;
+  	border-color: #000000;
+  	border-width:0px;
+  	
+  }
+  
+  table.tableMatrix td { 
+  	border-color: #000000; 
+	border-style: solid;
+	border-width:0px; 
+  }
+  
+    
+  .textHP { 
+  	font-size: 25px;
+  }
+  
+  #logo {
+  position: absolute; // reposition logo from the natural layout
+  left: 0px;
+  top: 0px;
+}
+
+#content {
+	font-weight:bold;
+	color:#000000;
+	z-index: 2;
+}
+  
+  
+#content2 {
+	color:#ffcc33;
+	z-index: 2;
+}
+
+a.Pglinks{
+	color:#C17430;
+}
+#contenttable{
+min-height:100%;
+}

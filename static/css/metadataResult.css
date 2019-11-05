@@ -1,0 +1,66 @@
+#neuronCount {
+    text-align: center;
+}
+
+ul#navigation {
+    padding: 0;
+    margin: 0;
+    float: center;
+    width: 100%;
+}
+
+ul#navigation li {
+    display: inline;
+    float: center;
+
+}
+
+ul#navigation li a {
+    text-decoration: none;
+    float: center;
+    margin: 0.0px;
+}
+
+.fixedcol {
+    position: absolute;
+    width: 10em;
+    left: 50;
+}
+
+#neurons {
+    font-size: 95%;
+}
+table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    -webkit-border-horizontal-spacing: 2px;
+    -webkit-border-vertical-spacing: 2px;
+    border-color: grey;
+}
+
+#neurons td {
+    padding-left: 1%;
+}
+
+#pageNumbers {
+    padding-left: 0;
+}
+
+#pageNumbers > li {
+    display: inline;
+    cursor: pointer;
+}
+
+.pageActive {
+    font-weight: bold !important;
+    font-size: 4 !important;
+}
+
+#loader {
+    width: 100%;
+    height: 40px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+}
