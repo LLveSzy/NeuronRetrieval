@@ -7,10 +7,11 @@ import numpy as np
 import h5py
 from keras.models import Model
 from keras import backend as K
+from django.conf import settings
 import os
 
-root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+#root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+root = settings.ROOT
 
 def discriminator_model():
     model = Sequential()

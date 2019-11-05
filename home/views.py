@@ -15,14 +15,14 @@ import gc
 #from home.searchNeuron import search
 from home.featherKeras import featherEtrKeras
 from home.featherModel import searchNeuronServer
-
+from django.conf import settings
 
 
 # Create your views here.
 height = 128
 width = 128
-root = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
-
+#root = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+root = settings.ROOT
 
 def dfs(tr, color, neuron_list, tree, res):
     if len(tree[tr]) is 0:
@@ -179,7 +179,7 @@ def home_page(request):
         #         # del swc, test_fea, sn, fe
         #         # gc.collect()
         for i in range(len(list)):
-            neuron_list.append(get_neuron_list('S:/FTRE/CNN/SWC files/allSwc/' + list[i]))
+            neuron_list.append(get_neuron_list(settings.SWC_ROOT +"/" + list[i]))
             # neuron_list.append(get_neuron_list( root + '/data/swc_temp/' + list[i]))
             #neuron_list.append(get_neuron_list(root + '/data/swc_temp/aele00019_Control-4.CNG.swc'))
             if 'el' in list[i]:

@@ -1,8 +1,10 @@
 import numpy as np
 from scipy.spatial.distance import cdist
 import os
-root = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+from django.conf import settings
 
+#root = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+root = settings.ROOT
 class searchNeuronServer:
     all_fea = np.array([])
     all_name = np.array([])
